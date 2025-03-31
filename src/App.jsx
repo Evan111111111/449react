@@ -11,7 +11,7 @@ function TestButton (){
 
 function CountMessage({ count }) {
   return (
-    <p>{count % 2 === 0 ? "Even " : "Odd "}</p>
+    <p>{count % 2 === 0 ? "Count is Even " : "Count is Odd "}</p>
   );
 }
 
