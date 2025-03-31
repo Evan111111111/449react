@@ -3,8 +3,26 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+function TestButton (){
+  return(
+    <button>TEST</button>
+  );
+}
+
+function CountMessage({ count }) {
+  return (
+    <p>{count % 2 === 0 ? "Even " : "Odd "}</p>
+  );
+}
+
 function App() {
   const [count, setCount] = useState(0)
+  const items = ["Red", "Green", "Blue", "Purple", "Orange"];
+  const [index, setIndex] = useState(0);
+
+  const handleButtonClick = () => {
+    setIndex((prevIndex) => (prevIndex + 1) % items.length); 
+  };
 
   return (
     <>
@@ -28,8 +46,12 @@ function App() {
       <p className="read-the-docs">
         Evan was here :)
       </p>
+      <TestButton />
+      <button onClick={handleButtonClick}> Show Next Color</button>
+      <p>{items[index]}</p>
+      <CountMessage count={count} />
     </>
   )
 }
 
-export default App
+export default App;
